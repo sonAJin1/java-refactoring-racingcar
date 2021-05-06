@@ -4,7 +4,6 @@ import model.stratege.MoveStrategy;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.IntStream;
 
 public class CarFactory {
     /*
@@ -14,7 +13,7 @@ public class CarFactory {
 
     public CarFactory(int carCount, MoveStrategy moveStrategy) {
         for (int i = 0; i < carCount; i++) {
-            cars.add(new Car(moveStrategy));
+            cars.add(new Car());
         }
     }
 
