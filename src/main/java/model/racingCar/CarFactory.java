@@ -11,7 +11,7 @@ public class CarFactory {
     */
     private List<Car> cars = new ArrayList<>();
 
-    public CarFactory(int carCount, MoveStrategy moveStrategy) {
+    public CarFactory(int carCount) {
         for (int i = 0; i < carCount; i++) {
             cars.add(new Car());
         }
@@ -19,5 +19,19 @@ public class CarFactory {
 
     public int getCarCount() {
         return cars.size();
+    }
+
+    public void moveCars(MoveStrategy moveStrategy) {
+        for (Car car : cars) {
+            car.move(moveStrategy);
+        }
+    }
+
+    public List<CarDTO> getMoveResult() {
+        List<CarDTO> carDTOS = new ArrayList<>();
+        for (Car car : cars) {
+            carDTOS.add(new CarDTO(car.getMoveRange()));
+        }
+        return carDTOS;
     }
 }

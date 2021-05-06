@@ -10,7 +10,7 @@ public class CarFactoryTest {
     @Test
     @DisplayName("입력한 만큼 자동차가 만들어지는지 테스트")
     void makeCar() {
-        CarFactory carFactory = new CarFactory(3, new RandomMoveStrategy());
+        CarFactory carFactory = new CarFactory(3);
         assertThat(carFactory.getCarCount()).isEqualTo(3);
     }
 

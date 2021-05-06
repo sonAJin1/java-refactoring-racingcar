@@ -14,4 +14,8 @@ public class Car {
         }
         return moveRange;
     }
+
+    public int getMoveRange() {
+        return moveRange;
+    }
 }
