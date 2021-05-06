@@ -1,5 +1,4 @@
 import model.racingCar.CarFactory;
-import model.stratege.RandomMoveStrategy;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

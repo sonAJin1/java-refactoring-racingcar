@@ -10,8 +10,8 @@ public class RacingGame {
     private int gameRound = 0;
 
     public RacingGame() {
-        gameRound = InputView.inputRacingRound();
         carFactory = new CarFactory(InputView.inputCarCount());
+        gameRound = InputView.inputRacingRound();
     }
 
     public void start(MoveStrategy moveStrategy) {
