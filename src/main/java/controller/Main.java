@@ -8,5 +8,4 @@ public class Main {
         RacingGame game = new RacingGame();
         game.start(new RandomMoveStrategy());
     }
-
 }
