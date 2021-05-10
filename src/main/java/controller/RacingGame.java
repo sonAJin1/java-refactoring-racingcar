@@ -11,7 +11,7 @@ public class RacingGame {
     private GameRound gameRound;
 
     public RacingGame() {
-        carFactory = new CarFactory(InputView.inputCarCount());
+        carFactory = new CarFactory(InputView.inputCarsName());
         gameRound = new GameRound(InputView.inputRacingRound());
     }
 

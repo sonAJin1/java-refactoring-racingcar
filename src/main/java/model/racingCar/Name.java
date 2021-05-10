@@ -18,9 +18,13 @@ public class Name {
         if (name.length() < MIN_NAME_LENGTH) {
             throw new IllegalArgumentException(ERROR_MIN_NAME_LENGTH);
         }
-        if (name.length() >= MAX_NAME_LENGTH) {
+        if (name.length() > MAX_NAME_LENGTH) {
             throw new IllegalArgumentException(ERROR_MAX_NAME_LENGTH);
         }
+    }
+
+    public String getName() {
+        return name;
     }
 
     @Override

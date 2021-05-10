@@ -3,18 +3,19 @@ package model.racingCar;
 import model.stratege.MoveStrategy;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class CarFactory {
-    /*
-   각 car 생성 및 관리 (주행 거리)
-    */
+    private static final String REGEX = ",";
     private List<Car> cars = new ArrayList<>();
 
-    public CarFactory(int carCount) {
-        for (int i = 0; i < carCount; i++) {
-            cars.add(new Car());
-        }
+    public CarFactory(String carNames) {
+        Arrays.stream(splitName(carNames)).forEach(name -> cars.add(new Car(name)));
+    }
+
+    private static String[] splitName(String inputName) {
+        return inputName.split(REGEX);
     }
 
     public int getCarCount() {
@@ -30,7 +31,7 @@ public class CarFactory {
     public List<CarDTO> getMoveResult() {
         List<CarDTO> carDTOS = new ArrayList<>();
         for (Car car : cars) {
-            carDTOS.add(new CarDTO(car.getMoveRange()));
+            carDTOS.add(new CarDTO(car.getMoveRange(), car.getName()));
         }
         return carDTOS;
     }

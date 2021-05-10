@@ -3,10 +3,12 @@ package model.racingCar;
 import model.stratege.MoveStrategy;
 
 public class Car {
-    /*
-    움직인 거리에 대한 정보
-     */
     private int moveRange = 0;
+    private final Name name;
+
+    public Car(String name) {
+        this.name = new Name(name);
+    }
 
     public int move(MoveStrategy moveStrategy) {
         if (moveStrategy.isMove()) {
@@ -17,5 +19,9 @@ public class Car {
 
     public int getMoveRange() {
         return moveRange;
+    }
+
+    public String getName() {
+        return name.getName();
     }
 }
